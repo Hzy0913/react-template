@@ -50,15 +50,23 @@ class App extends Component {
       }
     ]
   }
-  componentWillMount() {
+  async componentWillMount() {
+    const node = await '212221211';
+    const node2 = await '212221211';
+    this.setState({node, node2});
   }
   componentDidMount() {
   }
   render() {
-    const {cardList = []} = this.state;
+    const {cardList = [], node, node2} = this.state;
+    const a = [node2].map(item => 1);
     return (
       <div className="node" style={{padding: 20}}>
-        <h1>1213</h1>
+        <div className="nav">
+          asdaslkd啊上课就打瞌睡到家啊钐
+        </div>
+        <div className="selected">打算离开大陆是肯德基阿拉山口</div>
+        <h1 id="header">1212121213</h1>
         <p>1</p>
         <Row gutter={16}>
           {cardList.map((item, index) => (<Col span={8} key={item.key}>

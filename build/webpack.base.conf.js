@@ -2,18 +2,7 @@
 const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
-const vueLoaderConfig = require('./vue-loader.conf')
-const ProgressBarPlugin = require('progress-bar-webpack-plugin');
-const ProgressPlugin = require('webpack/lib/ProgressPlugin');
-
-const Chalk = require('chalk')
-// const webpack = require('webpack');
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const CleanWebpackPlugin = require('clean-webpack-plugin');
-// const CompressionWebpackPlugin = require('compression-webpack-plugin');
-// const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const resolve = utils.resolve;
-
 
 module.exports = {
   context: path.resolve(__dirname, '../'),
@@ -42,15 +31,15 @@ module.exports = {
         include: resolve('src'),
         loader: 'babel-loader'
       },
-      {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader'
-      },
-      {
-        test: /\.styl$/,
-        loader: 'style-loader!css-loader!stylus-loader',
-        include: [resolve('src')]
-      },
+      // {
+      //   test: /\.css$/,
+      //   loader: 'style-loader!css-loader'
+      // },
+      // {
+      //   test: /\.styl$/,
+      //   loader: 'stylus-loader',
+      //   include: [resolve('src')]
+      // },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',

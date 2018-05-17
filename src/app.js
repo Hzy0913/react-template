@@ -7,6 +7,9 @@ import store from './redux'; // 引入 store
 
 // 全局css
 import './style/index.styl';
+import './style/less.less';
+import './style/sass.sass';
+import './style/scss.scss';
 // 字体图标
 import './assets/iconfont.css';
 import './assets/iconfont.js';

@@ -6,7 +6,7 @@ import Store from '../redux';
 import App from '../containers/app';
 // import Login from '../containers/login';
 // import Main from '../containers/main';
-// import NotFound from '../containers/notfound';
+import NotFound from '../containers/notfound';
 // import List from '../containers/list';
 // import Img from '../containers/img';
 // import Svg from '../containers/svg';
@@ -31,6 +31,7 @@ const Root = () => (
       <div className="router-content">
         <Switch>
           <Router exact path="/" component={App} />
+          <Router exact path="/login" component={NotFound} />
         </Switch>
       </div>
     </Provider>

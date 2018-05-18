@@ -7,9 +7,11 @@ const baseWebpackConfig = require('./webpack.base.conf')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const Chalk = require('chalk')
+const open = require('open')
 const utils = require('./utils')
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
+const ENV = process.env
 
 const devWebpackConfig = merge(baseWebpackConfig, {
   module: {
@@ -43,7 +45,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env': require('../config/dev.env')
+      'process.env.NODE_ENV': '"development"'
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
@@ -57,7 +59,13 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       complete: Chalk.green('█'),
       incomplete: Chalk.white('█'),
       format: '  :bar ' + Chalk.green.bold(':percent') + ' :msg',
-      clear: false
+      clear: false,
+      callback: function () {
+        if (ENV.npm_config_o || ENV.npm_config_open) {
+          const {host, port} = devWebpackConfig.devServer
+          open(`http://${host}:${port}`)
+        }
+      }
     })
   ]
 })

@@ -17,7 +17,7 @@ module.exports = new Promise((resolve, reject) => {
       devWebpackConfig.devServer.port = port
       devWebpackConfig.plugins.push(new FriendlyErrorsPlugin({
         compilationSuccessInfo: {
-          notes: [`open: ${Chalk.green(`http://${devWebpackConfig.devServer.host}:${port}`)}`],
+          notes: [`running: ${Chalk.green(`http://${devWebpackConfig.devServer.host}:${port}`)}`],
         },
         onErrors: config.dev.notifyOnErrors
           ? utils.createNotifierCallback()
@@ -27,3 +27,4 @@ module.exports = new Promise((resolve, reject) => {
     }
   })
 })
+

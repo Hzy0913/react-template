@@ -20,8 +20,8 @@ module.exports = {
     }
   },
   performance: {
-    maxEntrypointSize: 1000000,
-    maxAssetSize: 300000,
+    maxEntrypointSize: 1200000,
+    maxAssetSize: 400000,
     hints: process.env.NODE_ENV === 'production' ? 'warning' : false
   },
   module: {
@@ -31,15 +31,6 @@ module.exports = {
         include: resolve('src'),
         loader: 'babel-loader'
       },
-      // {
-      //   test: /\.css$/,
-      //   loader: 'style-loader!css-loader'
-      // },
-      // {
-      //   test: /\.styl$/,
-      //   loader: 'stylus-loader',
-      //   include: [resolve('src')]
-      // },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',

@@ -6,6 +6,11 @@
     "browser": true
   },
   "globals": {
+    "store": false, //排除定义在window对象上的store
+    "axios": false, //排除定义在window对象上的axios
+    "$": false,  //排除定义在window对象上的$
+    "__DEVTOOLS__": false,
+    "__DMTEST__": false,
     "__DEVELOPMENT__": false
   },
   "rules": {

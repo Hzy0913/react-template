@@ -1,105 +1,81 @@
 body
-  background-color #4b5765
-.home
-  .center
-    width 400px
-    position fixed
-    left 50%
-    margin-left -200px
-    top 50%
-    margin-top -150px
-    cursor pointer
-    .logo
-      width 164px
-      position absolute
-      top -8px
-      left -8px
-    h1
-      color #fafafa
-      text-align center
-      font-size: 32px
-      text-shadow 2px 2px 2px rgba(0, 0, 0, .3)
-.center
-  .logo-box
-    width 150px
-    height 150px
-    margin 0 auto
-    display block
-    overflow hidden
-    border-radius 50%
-    position relative
-    &:before
-      animation bounce 14s infinite;
-      animation-fill-mode both;
-      animation-timing-function	ease-in-out;
-      background-color: rgba(255, 255, 255, 1)
-      width 100%
-      height 6px
-      display block
-      content ''
-      z-index 9
-      border-radius 50%
-      position relative
-@keyframes bounce {
-  0% {
-    opacity 0
-    transform translate3d(-90px, -20px, 0px) rotate3d(0, 0, 1, -45deg)
+  background-color #f0f2f5
+#app
+  min-height 100%
+.router-content
+  height 100%
 
-  }
-  30% {
-    opacity .2
-
-  }
-  40% {
-    opacity .4
-    height 10px
-  }
-  55% {
-    opacity 0
-    transform translate3d(130px, 200px, 40px) rotate3d(0, 0, 1, -45deg)
-  }
-  60% {
-    opacity 0
-  }
-  65% {
-    opacity 0
-  }
-  100% {
-    transform translate3d(130px, 200px, 40px) rotate3d(0, 0, 1, -45deg)
-  }
-}
-.logo-move
-  left -40px !important
-  top 0 !important
-  margin 0px !important
-  transition all 0.8s ease-in-out
-  zoom 0.4
-.documentation-item
-  background-color #eee
-  padding 10px
+.node
+  color #00a2d4
+  width 100%
+  height 100%
+  background-image url("../assets/bg.jpg")
+  background-size cover
+.header
+  position fixed
+  width 100%
+  left 0px
+  top 0px
+  z-index 9
+.login-form
+  width 100%
+  margin 0 auto
+  margin-top 10%
+.logout
+  position absolute
+  right 20px
+  top 20px
+  background-color rgba(255,255,255,0)
+  color #fff
+.form-box
+  width 900px
+  margin 0 auto
+  height 400px
   border-radius 5px
-  box-shadow 2px 2px 2px rgba(0, 0, 0, 0)
-  position relative
   overflow hidden
-  margin-bottom 20px
-  &:before
-    content ''
-    display block
+  position fixed
+  left: 50%
+  transform translate3d(-50%, -50%, 0)
+  top 50%
+.form-content
+  width 400px
+  height 100%
+  float left
+  background-color #fff
+  padding 30px
+.login-logo
+  width 80px
+  display block
+  margin 0 auto
+.login-admin-text
+  font-size 16px
+  font-weight 400
+  text-align center
+  color #666
+  span
+    color #1db0cc
+.form-image
+  float left
+  width 500px
+  height 100%
+  overflow hidden
+  img
     height 100%
-    width 12px
-    background-color #ccc
-    position absolute
-    left 0px
-    top 0px
-  a
-    display block
-    text-decoration none
-    color #333333
-    span
-      margin-left 10px
-  &:hover
-    box-shadow 2px 2px 2px rgba(0, 0, 0, .1)
-    transform translate3d(0px, -4px, 40px)
-    transition: all 0.3s ease-in-out
-    a
-      color #00a2d4 !important
+    position relative
+    left -160px
+.main-sider
+  background-color #fff
+  position fixed
+  left 0px
+  top 64px
+  height 100%
+  z-index 9
+.main-content
+  min-height 500px
+.list-content
+  padding-left 200px
+.menu-icon
+  font-size 32px
+  &:before
+    position relative
+    top 6px

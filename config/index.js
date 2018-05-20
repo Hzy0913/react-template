@@ -4,7 +4,24 @@ module.exports = {
   dev: {
     host: 'localhost',
     port: 8080,
-    proxyTable: {},
+    proxyTable: {
+      '/api': {
+        target: 'http://mark.binlive.cn',
+        changeOrigin: true,
+        secure: false,
+        pathRewrite: {
+          '^/api': '/api'
+        }
+      },
+      '/auth': {
+        target: 'http://mark.binlive.cn',
+        changeOrigin: true,
+        secure: false,
+        pathRewrite: {
+          '^/auth': '/auth'
+        }
+      }
+    },
     useEslint: true,
     autoOpenBrowser: false,
     errorOverlay: true,

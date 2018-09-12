@@ -46,7 +46,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"development"',
-      __DEVELOPMENT__: true, //判断node环境变量为development是赋值为true
+      __DEVELOPMENT__: true,
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
@@ -62,9 +62,10 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       format: '  :bar ' + Chalk.green.bold(':percent') + ' :msg',
       clear: false,
       callback: function () {
-        if (ENV.npm_config_o || ENV.npm_config_open) {
-          const {host, port} = devWebpackConfig.devServer
-          open(`http://${host}:${port}`)
+        if (!config.dev.autoOpenBrowser && !ENV.FIRST_COMPILE && (ENV.npm_config_o || ENV.npm_config_open)) {
+          ENV.FIRST_COMPILE = true;
+          const {port} = devWebpackConfig.devServer;
+          open(`http://localhost:${port}`)
         }
       }
     })

@@ -62,9 +62,10 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       format: '  :bar ' + Chalk.green.bold(':percent') + ' :msg',
       clear: false,
       callback: function () {
-        if (ENV.npm_config_o || ENV.npm_config_open) {
-          const {host, port} = devWebpackConfig.devServer
-          open(`http://${host}:${port}`)
+        if (!config.dev.autoOpenBrowser && !ENV.FIRST_COMPILE && (ENV.npm_config_o || ENV.npm_config_open)) {
+          ENV.FIRST_COMPILE = true;
+          const {port} = devWebpackConfig.devServer;
+          open(`http://localhost:${port}`)
         }
       }
     })
